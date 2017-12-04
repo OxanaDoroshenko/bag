@@ -4,6 +4,8 @@ export const EXPRESS_TEST_START = "EXPRESS_TEST_START";
 export const expressTestStart = () => {
     return { type: EXPRESS_TEST_START }
 }
+/*-------------------------*/
+
 
 export const EXPRESS_TEST_RESULTS = "EXPRESS_TEST_RESULTS";
 export const expressTestResults = (data) => {
@@ -46,6 +48,30 @@ export const dbTest = () => {
         axios.get(`/api/products`)
             .then(res => dispatch(dbTestResults(JSON.stringify(res.data))))
             .catch(err => dispatch(dbTestError(err)))
+
+    }
+}
+
+/*----------------------*/
+export const COMPANIES_ERROR = "COMPANIES_ERROR";
+export const COMPANIES_RESULTS = "COMPANIES_RESULTS";
+export const COMPANIES_TEST_START = "COMPANIES_TEST_START";
+export const VIEW_COMPANIES = "VIEW_COMPANIES";
+export const companiesFetchStart = () => {
+    return { type: COMPANIES_TEST_START }
+}
+export const companiesResult = (data) => {
+    return { type: COMPANIES_RESULTS, data }
+}
+export const companiesError = (data) => {
+    return { type: COMPANIES_ERROR, data }
+}
+export const viewCompanies = () => {
+    return dispatch => {
+        dispatch(companiesFetchStart());
+        axios.get(`/api/companies`)
+            .then(res => dispatch(companiesResult(JSON.stringify(res.data))))
+            .catch(err => dispatch(companiesError(err)))
 
     }
 }

@@ -5,6 +5,9 @@ import classnames from 'classnames';
 import './style.css';
 
 export default class About extends Component {
+    componentDidMount(){
+        this.props.actions.viewCompanies();
+    }
     render() {
         const { className, ...props } = this.props;
         return (

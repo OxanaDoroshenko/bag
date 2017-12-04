@@ -7,7 +7,7 @@ const name = process.env.DATABASE_NAME || pkg.name;
 
 const url = process.env.DATABASE_URL || `postgres://postgres@localhost:5432/${name}`;
 
-console.log(chalk.yellow(`Opening database connection to ${url}${name}`));
+console.log(chalk.yellow(`Opening database connection to ${url}`));
 
 // create the database instance
 const db = module.exports = new Sequelize(url, {
@@ -16,7 +16,8 @@ const db = module.exports = new Sequelize(url, {
     underscored: true,       // use snake_case rather than camelCase column names
     freezeTableName: true,   // don't change table names from the one specified
     timestamps: true,        // automatically include timestamp columns
-  }
+  },
+    operatorsAliases: false,
 })
 
 // pull in our models

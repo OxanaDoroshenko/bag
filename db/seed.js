@@ -23,6 +23,21 @@ const seedProducts = () => db.Promise.map([
   {title: 'Training suit for couple', category: ['Athletics', 'Clothes'], current_price: 21, description: 'Lion look', availability: false, inventory: 100, promo_id: 1},
 ], product => db.model('products').create(product));
 
+const seedCompanies = () => db.Promise.map([
+    {
+        title: 'MyHome',
+        isCurrent: false
+    },
+    {
+        title: 'Crimea Technologies',
+        isCurrent: false
+    },
+    {
+        title: 'Satellite Soft Labs',
+        isCurrent: true
+    },
+], company => db.model('companies').create(company));
+
 const seedReviews = () => db.Promise.map([
  {rating: 1, review_text: "awful",product_id:5},
  {rating: 1, review_text: "if you have too much extra money ",product_id:1},
@@ -40,5 +55,7 @@ const seedReviews = () => db.Promise.map([
    .then(products => console.log(`Seeded ${products.length} products OK`))
    .then(seedReviews)
    .then(reviews => console.log(`Seeded ${reviews.length} reviews OK`))
+   .then(seedCompanies)
+   .then(companies => console.log(`Seeded ${companies.length} reviews OK`))
    .catch(error => console.error(error))
    .finally(() => db.close())
