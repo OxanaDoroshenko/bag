@@ -5,7 +5,7 @@ const pkg = require('../package.json')
 
 const name = process.env.DATABASE_NAME || pkg.name;
 
-const url = process.env.DATABASE_URL || `postgres://postgres@localhost:5432/${name}`;
+const url = process.env.DATABASE_URL || `postgres://user:user@localhost:5432/${name}`;
 
 console.log(chalk.yellow(`Opening database connection to ${url}`));
 

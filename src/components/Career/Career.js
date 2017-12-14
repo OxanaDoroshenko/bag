@@ -1,12 +1,17 @@
 // src/components/About/index.js
+import {viewCompanies} from '../../actions'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
 import './style.css';
 
-export default class About extends Component {
+class Career extends Component {
     componentDidMount(){
-        this.props.actions.viewCompanies();
+        debugger;
+        this.props.viewCompanies();
     }
     render() {
         const { className, ...props } = this.props;
@@ -19,3 +24,17 @@ export default class About extends Component {
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        companies: state.companies.results,
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        viewCompanies: bindActionCreators(viewCompanies, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Career);
