@@ -12,6 +12,10 @@ const Company = db.define('companies', {
         type: Sequelize.BOOLEAN,
         allowNull: false
     },
+    img:{
+        type: Sequelize.STRING,
+        allowNull: true,
+    }
 });
 
 module.exports = Company;

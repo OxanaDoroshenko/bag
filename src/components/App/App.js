@@ -3,6 +3,8 @@ import Career from '../../components/Career/Career';
 
 import React, {Component} from 'react';
 import classnames from 'classnames';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 // import {Link} from 'react-router-dom';
 import logo from './logo.svg';
 import './style.css';

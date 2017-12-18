@@ -1,7 +1,9 @@
-// src/components/About/index.js
 import {viewCompanies} from '../../actions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
+
+//components import
+import ExpandedCard from '../base/CardWithAvatar.js'
 
 import React, { Component } from 'react';
 import classnames from 'classnames';
@@ -10,16 +12,16 @@ import './style.css';
 
 class Career extends Component {
     componentDidMount(){
-        debugger;
         this.props.viewCompanies();
     }
     render() {
         const { className, ...props } = this.props;
+        const companies  = typeof this.props.companies!=='undefined' ? this.props.companies.map((company)=>{
+            return <ExpandedCard title={company.title} imgName={company.img}/>;
+        }): '';
         return (
-            <div className={classnames('About', className)}>
-                <h1>
-                    React Router working!
-                </h1>
+            <div className={classnames('carrier', className)}>
+                {companies}
             </div>
         );
     }
@@ -27,7 +29,7 @@ class Career extends Component {
 
 function mapStateToProps(state) {
     return {
-        companies: state.companies.results,
+        companies: state.companies.companies,
     }
 }
 

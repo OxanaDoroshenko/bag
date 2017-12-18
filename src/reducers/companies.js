@@ -1,7 +1,7 @@
 import { COMPANIES_ERROR, COMPANIES_RESULTS, COMPANIES_TEST_START, VIEW_COMPANIES } from '../actions';
 
 const initialState = {
-    companies: ''
+    companies: []
 };
 
 const companiesReducer = (state = initialState, action) => {

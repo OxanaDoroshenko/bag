@@ -70,7 +70,7 @@ export const viewCompanies = () => {
     return dispatch => {
         dispatch(companiesFetchStart());
         axios.get(`/api/companies`)
-            .then(res => dispatch(companiesResult(JSON.stringify(res.data))))
+            .then(res => dispatch(companiesResult(res.data)))
             .catch(err => dispatch(companiesError(err)))
 
     }

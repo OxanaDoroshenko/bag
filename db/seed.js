@@ -26,15 +26,18 @@ const seedProducts = () => db.Promise.map([
 const seedCompanies = () => db.Promise.map([
     {
         title: 'MyHome',
-        isCurrent: false
+        isCurrent: false,
+        img: 'myhome',
     },
     {
         title: 'Crimea Technologies',
-        isCurrent: false
+        isCurrent: false,
+        img: 'krtech',
     },
     {
         title: 'Satellite Soft Labs',
-        isCurrent: true
+        isCurrent: true,
+        img:'ssl',
     },
 ], company => db.model('companies').create(company));
 
