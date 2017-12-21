@@ -1,16 +1,11 @@
 import React from 'react';
-import IconMenu from 'material-ui/IconMenu';
-import {blue900} from 'material-ui/styles/colors';
-import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
-import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
-import MenuItem from 'material-ui/MenuItem';
+
 
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 
-import Menu from '../../components/Menu/Menu';
 
 
 import './style.css';

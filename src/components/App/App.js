@@ -1,22 +1,18 @@
-import ToolBar from '../../components/ToolBar/ToolBar';
-import Career from '../../components/Career/Career';
-
-import React, {Component} from 'react';
-import classnames from 'classnames';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-// import {Link} from 'react-router-dom';
-import logo from './logo.svg';
-import './style.css';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ColorScheme from '../../colorsSchemes/ColorSchemaDarkBlue.js';
-
-import { Provider } from 'react-redux';
 import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom';
+import React, {Component} from 'react';
+import classnames from 'classnames';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ColorScheme from '../../colorsSchemes/ColorSchemaLightBlue.js';
+
+import ToolBar from '../../components/ToolBar/ToolBar';
+import Career from '../../components/Career/Career';
+
+import './style.css';
+
 
 const injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -49,10 +45,6 @@ class App extends Component {
                             <Route path="/career" exact component={Career}/>
                         </div>
                     </div>
-                    <button onClick={this.props.actions.expressTest}>Test if Express is working</button>
-                    <br />
-                    <br />
-                    <button onClick={this.props.actions.dbTest}>Test if Express and Sequelize are working</button>
                 </div>
             </Router>
             </MuiThemeProvider>
