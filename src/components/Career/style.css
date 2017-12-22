@@ -1,5 +1,15 @@
 .carrier{
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
+}
+.carrier>div{
+    display: flex;
+    margin: 28px;
+    max-width: 350px;
+    /*min-width: 350px;*/
+}
+.carrier img{
+    display: flex;
+    max-width: 300px !important;
 }

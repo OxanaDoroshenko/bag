@@ -17,7 +17,12 @@ class Career extends Component {
     render() {
         const { className, ...props } = this.props;
         const companies  = typeof this.props.companies!=='undefined' ? this.props.companies.map((company)=>{
-            return <ExpandedCard title={company.title} imgName={company.img}/>;
+            return <ExpandedCard title={company.title}
+                                 imgName={company.img}
+                                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.'/>;
         }): '';
         return (
             <div className={classnames('carrier', className)}>
