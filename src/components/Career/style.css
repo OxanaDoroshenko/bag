@@ -5,9 +5,9 @@
 }
 .carrier>div{
     display: flex;
-    margin: 28px;
-    max-width: 350px;
-    /*min-width: 350px;*/
+    margin: 7px;
+    max-width: 300px;
+    min-width: 300px;
 }
 .carrier img{
     display: flex;

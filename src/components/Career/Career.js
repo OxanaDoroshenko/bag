@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 //components import
 import ExpandedCard from '../base/CardWithAvatar.js'
+import PageTitle from '../base/Title.js'
 
 import React, { Component } from 'react';
 import classnames from 'classnames';
@@ -18,15 +19,17 @@ class Career extends Component {
         const { className, ...props } = this.props;
         const companies  = typeof this.props.companies!=='undefined' ? this.props.companies.map((company)=>{
             return <ExpandedCard title={company.title}
+                                 key={company.title}
                                  imgName={company.img}
-                                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-          Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-          Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.'/>;
+                                 siteUrl={company.siteUrl}
+                                 text={company.text}/>;
         }): '';
         return (
-            <div className={classnames('carrier', className)}>
-                {companies}
+            <div>
+                <PageTitle text="Компании"/>
+                <div className={classnames('carrier', className)}>
+                    {companies}
+                </div>
             </div>
         );
     }

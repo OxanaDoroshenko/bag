@@ -6,9 +6,13 @@ import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 
-
-
 import './style.css';
+
+const style={
+    toolbar:{
+        minHeight: '56px',
+    },
+}
 
 export default class ToolbarExamplesSimple extends React.Component {
 
@@ -28,7 +32,7 @@ export default class ToolbarExamplesSimple extends React.Component {
         const menuItems = this.props.items;
         return (
 
-            <Toolbar>
+            <Toolbar style={style.toolbar}>
                 <ToolbarGroup firstChild={true}>
                     <div className="system-title">
                         <div className="system-title__logo"></div>

@@ -26,13 +26,21 @@ const seedProducts = () => db.Promise.map([
 const seedCompanies = () => db.Promise.map([
     {
         title: 'MyHome',
+        subtitle: 'Строительная компания MyHome',
         isCurrent: false,
         img: 'myhome',
+        siteUrl: 'http://myhome.company/',
     },
     {
         title: 'Crimea Technologies',
+        subtitle: 'Государственное унитарное предприятие Республики Крым "КРЫМ ТЕХНОЛОГИИ"',
         isCurrent: false,
         img: 'krtech',
+        siteUrl: 'https://krtech.ru/',
+        text: 'ГУП РК "Крымтехнологии" — ведущее региональное многопрофильное государственное предприятие,' +
+        ' подведомственное Министерству внутренней политики информации и связи Республики Крым,' +
+        ' осуществляющее деятельность в сфере информационных технологий,' +
+        ' информатизации и телекоммуникаций.'
     },
     {
         title: 'Satellite Soft Labs',

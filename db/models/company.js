@@ -8,12 +8,24 @@ const Company = db.define('companies', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    subtitle: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
     isCurrent: {
         type: Sequelize.BOOLEAN,
         allowNull: false
     },
     img:{
         type: Sequelize.STRING,
+        allowNull: true,
+    },
+    siteUrl:{
+        type: Sequelize.STRING,
+        allowNull: true,
+    },
+    text:{
+        type: Sequelize.TEXT,
         allowNull: true,
     }
 });
