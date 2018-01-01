@@ -10,9 +10,9 @@ const style={
     },
     cardConteiner:{
         display: 'flex',
+        justifyContent: 'flex-start',
         flexDirection: 'column',
         width: '100%',
-        justifyContent: 'space-between',
     },
     cardBlock:{
         display: 'flex',
@@ -63,7 +63,10 @@ export default class CardExampleControlled extends React.Component {
                     style={style.cardBlock}
                 />
                 <CardText className="card__short-content">
-                    Должность: {this.props.shortText}
+                    <b>Время работы:</b> {this.props.totalText}
+                </CardText>
+                <CardText className="card__short-content">
+                    <b>Должность:</b> {this.props.shortText}
                 </CardText>
                 <CardMedia
                     expandable={true}

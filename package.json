@@ -36,6 +36,7 @@
   "devDependencies": {
     "chalk": "^2.3.0",
     "material-ui": "^0.20.0",
+    "moment": "^2.20.1",
     "mysql": "^2.15.0",
     "path": "^0.12.7",
     "pg-hstore": "^2.3.2",
