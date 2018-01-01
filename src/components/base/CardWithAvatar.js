@@ -17,6 +17,8 @@ const style={
     cardBlock:{
         display: 'flex',
         justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        textAlign: 'left'
     }
 }
 
@@ -52,6 +54,7 @@ export default class CardExampleControlled extends React.Component {
                   onExpandChange={this.handleExpandChange}
                   containerStyle = {style.cardConteiner}>
                 <CardHeader
+                    className="card__header"
                     title={this.props.title}
                     subtitle={this.props.subtitle}
                     avatar={logoImg}
@@ -59,12 +62,15 @@ export default class CardExampleControlled extends React.Component {
                     showExpandableButton={true}
                     style={style.cardBlock}
                 />
+                <CardText className="card__short-content">
+                    Должность: {this.props.shortText}
+                </CardText>
                 <CardMedia
                     expandable={true}
                     overlay={<CardTitle title={this.props.title} subtitle={this.props.subtitle} onClick={this.openSite}/>}>
                     <img src={logoImg} alt="" />
                 </CardMedia>
-                {/*<CardTitle title={this.props.title} subtitle={this.props.subtitle} expandable={true} />*/}
+                <CardTitle title={this.props.title} subtitle={this.props.subtitle} expandable={true} />
                 <CardText expandable={true} style={style.text}>
                     {this.props.text}
                 </CardText>

@@ -19,6 +19,8 @@ class Career extends Component {
         const { className, ...props } = this.props;
         const companies  = typeof this.props.companies!=='undefined' ? this.props.companies.map((company)=>{
             return <ExpandedCard title={company.title}
+                                 subtitle={company.subtitle}
+                                 shortText = {company.position}
                                  key={company.title}
                                  imgName={company.img}
                                  siteUrl={company.siteUrl}

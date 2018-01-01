@@ -6,10 +6,20 @@
 .carrier>div{
     display: flex;
     margin: 7px;
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 360px;
+    min-width: 360px;
 }
 .carrier img{
     display: flex;
-    max-width: 300px !important;
+    max-width: 360px !important;
+}
+
+.card__header img{
+    min-width: 40px;
+}
+.card__header img+div{
+    padding-right: 21px !important;
+}
+.card__short-content{
+    text-align: left;
 }
