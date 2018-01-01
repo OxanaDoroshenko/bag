@@ -1,11 +1,12 @@
 .carrier{
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 .carrier>div{
     display: flex;
-    margin: 7px;
+    margin: 14px;
     max-width: 360px;
     min-width: 360px;
 }
@@ -21,5 +22,9 @@
     padding-right: 21px !important;
 }
 .card__short-content{
+    text-align: left;
+    min-height: 63px;
+}
+.card__short-title{
     text-align: left;
 }

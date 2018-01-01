@@ -4,7 +4,7 @@ const style = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    margin: '7px',
+    margin: '14px',
     paddingTop: '0px',
     letterSpacing: '0px',
     fontSize: '24px',

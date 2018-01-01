@@ -19,6 +19,9 @@ const style={
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         textAlign: 'left'
+    },
+    overlay:{
+        cursor: 'pointer',
     }
 }
 
@@ -62,7 +65,7 @@ export default class CardExampleControlled extends React.Component {
                     showExpandableButton={true}
                     style={style.cardBlock}
                 />
-                <CardText className="card__short-content">
+                <CardText className="card__short-title">
                     <b>Время работы:</b> {this.props.totalText}
                 </CardText>
                 <CardText className="card__short-content">
@@ -70,7 +73,10 @@ export default class CardExampleControlled extends React.Component {
                 </CardText>
                 <CardMedia
                     expandable={true}
-                    overlay={<CardTitle title={this.props.title} subtitle={this.props.subtitle} onClick={this.openSite}/>}>
+                    overlay={<CardTitle title={this.props.title}
+                                        subtitle={this.props.subtitle}
+                                        style={style.overlay}
+                                        onClick={this.openSite}/>}>
                     <img src={logoImg} alt="" />
                 </CardMedia>
                 <CardTitle title={this.props.title} subtitle={this.props.subtitle} expandable={true} />
@@ -78,8 +84,14 @@ export default class CardExampleControlled extends React.Component {
                     {this.props.text}
                 </CardText>
                 <CardActions style={style.cardBlock}>
-                    <FlatButton label="Детальнее" onClick={this.handleExpand} />
-                    <FlatButton label="Закрыть" onClick={this.handleReduce} />
+                    <FlatButton label="Детальнее"
+                                primary={true}
+                                onClick={this.handleExpand}
+                    />
+                    <FlatButton label="Закрыть"
+                                onClick={this.handleReduce}
+                                secondary={true}
+                    />
                 </CardActions>
             </Card>
         );

@@ -35,8 +35,9 @@ class App extends Component {
     render() {
         const {className, ...props} = this.props;
         return (
-            <MuiThemeProvider muiTheme={ColorScheme}>
             <Router>
+                <MuiThemeProvider muiTheme={ColorScheme}>
+
                 <div className={classnames('App', className)}>
                     <ToolBar items={menuItems}/>
                     <div className="page__container__content">
@@ -46,8 +47,9 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+                </MuiThemeProvider>
+
             </Router>
-            </MuiThemeProvider>
 
         )
     }
