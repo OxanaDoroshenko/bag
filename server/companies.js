@@ -1,11 +1,16 @@
 const db = require('../db') //this is required
-const Product = require('../db/models/company');
+const Company = require('../db/models/company');
 // const Review = require('../db/models/review');
 
 const router = require('express').Router()
 
 router.get('/', function(req, res, next) {
-    Product.findAll()
+    Company.findAll({
+        // Add order conditions here....
+        order: [
+            ['time_start', 'ASC'],
+        ],
+    })
     .then(result => {
         res.status(200).send(result);
     })

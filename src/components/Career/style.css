@@ -12,7 +12,10 @@
 }
 .carrier img{
     display: flex;
+    object-fit: contain;
+    overflow: hidden;
     max-width: 360px !important;
+    background-color: transparent !important;
 }
 
 .card__header img{
@@ -23,7 +26,12 @@
 }
 .card__short-content{
     text-align: left;
-    min-height: 63px;
+    margin-bottom: 7px;
+}
+.card__short-content span:first-child{
+    font-size: 12px;
+    font-weight: 200;
+    color: rgba(0, 0, 0, 0.54);
 }
 .card__short-title{
     text-align: left;

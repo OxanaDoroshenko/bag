@@ -2,6 +2,8 @@ import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
+import * as moment from 'moment'
+
 const style={
     text:{
         display: 'flex',
@@ -22,7 +24,11 @@ const style={
     },
     overlay:{
         cursor: 'pointer',
-    }
+        textAlign: 'left'
+    },
+    media:{
+      minHeight: '140px',
+    },
 }
 
 export default class CardExampleControlled extends React.Component {
@@ -38,7 +44,8 @@ export default class CardExampleControlled extends React.Component {
         this.setState({expanded: expanded});
     };
     openSite = (expanded) => {
-        window.open(`${this.props.siteUrl}`);
+        const siteUrl = this.props.companies[0].siteUrl;
+        window.open(`${siteUrl}`);
     };
 
     handleExpand = () => {
@@ -51,37 +58,49 @@ export default class CardExampleControlled extends React.Component {
     };
 
     render() {
-        let logoImg = require(`../../images/companies/${this.props.imgName}.png`);
+        const imgName = this.props.companies[0].img;
+        const title = this.props.companies[0].title;
+        const subtitle = this.props.companies[0].subtitle;
+        const text = this.props.companies[0].text;
+        const positions = this.props.companies.map((company)=>{
+            const startWork = moment(company.time_start).format('MM.DD.YYYY');
+            const endWork = moment(company.time_end).format('MM.DD.YYYY');
+            return {
+                interval: `${startWork} - ${endWork}`,
+                positionName: company.position,
+            }
+        });
+        const positionsList = positions.map((position)=>{
+            return <div className="card__short-content"><span>{position.interval}</span><br></br><span>{position.positionName}</span></div>;
+        });
+        const logoImg = require(`../../images/companies/${imgName}.png`);
         return (
             <Card expanded={this.state.expanded}
                   onExpandChange={this.handleExpandChange}
                   containerStyle = {style.cardConteiner}>
                 <CardHeader
                     className="card__header"
-                    title={this.props.title}
-                    subtitle={this.props.subtitle}
+                    title={title}
+                    subtitle={subtitle}
                     avatar={logoImg}
                     actAsExpander={true}
                     showExpandableButton={true}
                     style={style.cardBlock}
                 />
                 <CardText className="card__short-title">
-                    <b>Время работы:</b> {this.props.totalText}
-                </CardText>
-                <CardText className="card__short-content">
-                    <b>Должность:</b> {this.props.shortText}
+                    {positionsList}
                 </CardText>
                 <CardMedia
+                    style={style.media}
                     expandable={true}
-                    overlay={<CardTitle title={this.props.title}
-                                        subtitle={this.props.subtitle}
+                    overlay={<CardTitle title={title}
+                                        subtitle={subtitle}
                                         style={style.overlay}
                                         onClick={this.openSite}/>}>
-                    <img src={logoImg} alt="" />
+                    <img src={logoImg} alt={subtitle} />
                 </CardMedia>
-                <CardTitle title={this.props.title} subtitle={this.props.subtitle} expandable={true} />
                 <CardText expandable={true} style={style.text}>
-                    {this.props.text}
+                    {text}
                 </CardText>
                 <CardActions style={style.cardBlock}>
                     <FlatButton label="Детальнее"

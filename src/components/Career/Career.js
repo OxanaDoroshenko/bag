@@ -5,9 +5,11 @@ import { bindActionCreators } from 'redux';
 //components import
 import ExpandedCard from '../base/CardWithAvatar.js'
 import PageTitle from '../base/Title.js'
+//helpers import
+import groupBy from '../../helpers/Group';
 
 import React, { Component } from 'react';
-import * as moment from 'moment'
+
 import classnames from 'classnames';
 
 import './style.css';
@@ -18,18 +20,14 @@ class Career extends Component {
     }
     render() {
         const { className, ...props } = this.props;
-        const companies  = typeof this.props.companies!=='undefined' ? this.props.companies.map((company)=>{
-            const startWork = moment(company.time_start).format('MM.DD.YYYY');
-            const endWork = moment(company.time_end).format('MM.DD.YYYY');
-            const workInterval = `${startWork} - ${endWork}`;
-            return <ExpandedCard title={company.title}
-                                 subtitle={company.subtitle}
-                                 shortText = {company.position}
-                                 totalText = {workInterval}
-                                 key={company.title}
-                                 imgName={company.img}
-                                 siteUrl={company.siteUrl}
-                                 text={company.text}/>;
+        const groupedCompanies  = typeof this.props.companies!=='undefined' ? groupBy(this.props.companies, 'title') : '';
+        const companies  = typeof this.props.companies!=='undefined' ? Object.keys(groupedCompanies).map(function(key, index) {
+            const companies = groupedCompanies[key];
+
+            return <ExpandedCard title={key}
+                                 companies = {companies}
+                                 key={key}
+            />;
         }): '';
         return (
             <div>
