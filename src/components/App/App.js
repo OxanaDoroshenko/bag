@@ -38,18 +38,16 @@ class App extends Component {
         return (
             <Router>
                 <MuiThemeProvider muiTheme={ColorScheme}>
-
-                <div className={classnames('App', className)}>
-                    <ToolBar items={menuItems}/>
-                    <div className="page__container__content">
-                        <div className="container__content">
-                            <Route path="/" exact component={Career}/>
-                            <Route path="/career" exact component={Career}/>
+                    <div className={classnames('App', className)}>
+                        <ToolBar items={menuItems}/>
+                        <div className="page__container__content">
+                            <div className="container__content">
+                                <Route path="/" exact component={Career}/>
+                                <Route path="/career" exact component={Career}/>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </MuiThemeProvider>
-
             </Router>
 
         )
