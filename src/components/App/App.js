@@ -12,6 +12,7 @@ import ToolBar from '../../components/ToolBar/ToolBar';
 import Career from '../../components/Career/Career';
 
 import './style.css';
+import './media.css';
 
 
 const injectTapEventPlugin = require("react-tap-event-plugin");

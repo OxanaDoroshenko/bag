@@ -1,0 +1,26 @@
+.social{
+    display: flex;
+    justify-content: space-between;
+}
+.social__item{
+    display: flex;
+    height: 24px;
+    width: 24px;
+    padding: 0 1px;
+}
+
+.vk{
+    background: url('../../images/socials/vk.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.instagram{
+    background: url('../../images/socials/instagram.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.twitter{
+    background: url('../../images/socials/twitter.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}

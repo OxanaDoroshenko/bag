@@ -4,7 +4,7 @@ import FontIcon from 'material-ui/FontIcon';
 
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
+import Socials from '../../components/Socials/SocialList';
 
 import './style.css';
 
@@ -12,6 +12,13 @@ const style={
     toolbar:{
         minHeight: '56px',
     },
+    profile: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: 'auto',
+        lineHeight: '17px',
+        textAlign: 'left',
+    }
 }
 
 export default class ToolbarExamplesSimple extends React.Component {
@@ -42,11 +49,12 @@ export default class ToolbarExamplesSimple extends React.Component {
                     {/*<Menu items={menuItems}/>*/}
                     <FontIcon className="muidocs-icon-custom-sort"/>
                     <ToolbarSeparator />
-                    <Subheader style={{width: 'auto'}}>
-                        <span>Фронтенд-разработчик</span>
-                        <a href="#">Дорошенко Оксана Александровна</a>
+                    <Subheader style={style.profile}>
+                        <span className="profile__position">Frontend-chef</span>
+                        <a href="#" className="profile__name">Оксана Дорошенко</a>
                     </Subheader>
-                    <Divider/>
+                    <ToolbarSeparator />
+                    <Socials/>
                 </ToolbarGroup>
             </Toolbar>
         );
