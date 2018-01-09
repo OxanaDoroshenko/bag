@@ -10,14 +10,14 @@ import ColorScheme from '../../colorsSchemes/ColorSchemaDarkBlue.js';
 require('./_style.scss');
 
 let style = {
-    display: 'inline-flex',
-    margin: '0',
-    height: 'calc(100vh - 50px)',
-    zIndex: 1500,
+    // display: 'inline-flex',
+    // margin: '0',
+    // height: 'calc(100vh - 50px)',
+    // zIndex: 1500,
     listItem: {
-        padding: 0,
-        minHeight: 48,
-        minWidth: 48
+        // padding: 0,
+        // minHeight: 48,
+        // minWidth: 48
     }
 };
 
@@ -37,7 +37,6 @@ export default class SysMenu extends React.Component {
     render() {
         const menuItems = this.props.items;
         return (
-            <Paper style={style} zDepth={2}>
                 <List
                       value={this.state.index}
                       onChange={this.handleClick}>
@@ -57,7 +56,6 @@ export default class SysMenu extends React.Component {
                         </Link>;
                     })}
                 </List>
-            </Paper>
         );
     }
 }
