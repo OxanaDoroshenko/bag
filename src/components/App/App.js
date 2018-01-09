@@ -7,7 +7,7 @@ import Paper from 'material-ui/Paper';
 import classnames from 'classnames';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ColorScheme from '../../colorsSchemes/ColorSchemaLightBlue.js';
+import ColorScheme from '../../colorsSchemes/ColorSchemaGreen.js';
 
 import ToolBar from '../../components/ToolBar/ToolBar';
 //content components
@@ -30,35 +30,35 @@ const menuItems = [
     {
         name: 'Career',
         code: 'career',
-        icon: 'settings',
+        icon: 'trending_up',
         url: '/career',
         component: Career
     },
     {
         name: 'Skills',
         code: 'career',
-        icon: 'settings',
+        icon: 'gps_fixed',
         url: '/skills',
         component: Skills
     },
     {
         name: 'Projects',
         code: 'projects',
-        icon: 'settings',
+        icon: 'work',
         url: '/projects',
         component: Projects
     },
     {
         name: 'Education',
         code: 'education',
-        icon: 'settings',
+        icon: 'account_balance',
         url: '/education',
         component: Education
     },
     {
         name: 'Interests',
         code: 'interests',
-        icon: 'interests',
+        icon: 'fitness_center',
         url: '/interests',
         component: Interests
     },

@@ -109,7 +109,6 @@ export default class CardExampleControlled extends React.Component {
                     />
                     <FlatButton label="Закрыть"
                                 onClick={this.handleReduce}
-                                secondary={true}
                     />
                 </CardActions>
             </Card>

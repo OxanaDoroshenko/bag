@@ -3,21 +3,20 @@ import { Link } from 'react-router-dom';
 import {List, ListItem} from 'material-ui/List';
 import Paper from 'material-ui/Paper';
 import FontIcon from 'material-ui/FontIcon';
-import {blue900} from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import ColorScheme from '../../colorsSchemes/ColorSchemaDarkBlue.js';
+import {green900} from 'material-ui/styles/colors';
 
-require('./_style.scss');
+require('./_style.css');
 
 let style = {
-    // display: 'inline-flex',
-    // margin: '0',
-    // height: 'calc(100vh - 50px)',
-    // zIndex: 1500,
+    list:{
+        // width: '160px',
+    },
     listItem: {
-        // padding: 0,
-        // minHeight: 48,
-        // minWidth: 48
+    },
+    icon:{
+        color: green900,
     }
 };
 
@@ -39,16 +38,20 @@ export default class SysMenu extends React.Component {
         return (
                 <List
                       value={this.state.index}
+                      style={style.list}
                       onChange={this.handleClick}>
                     {menuItems.map((item, key) => {
-                         return <Link to={item.url} className="menu__list-item" key={key} title={item.name}>
+                         return <Link to={item.url}
+                                      className="menu__list-item"
+                                      key={key}
+                                      title={item.name}>
                             <ListItem
                                 value={key}
                                 innerDivStyle = {style.listItem}
-                                primaryText=""
-                                rightIcon={
+                                primaryText={item.name}
+                                leftIcon={
                                     <FontIcon className="material-icons"
-                                              style={{color: blue900, right: 0}}>
+                                              style={style.icon}>
                                         {item.icon}
                                     </FontIcon>
                                 }
