@@ -1,0 +1,38 @@
+.carrier{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.carrier>div{
+    display: flex;
+    margin: 14px;
+    max-width: 360px;
+    min-width: 360px;
+}
+.carrier img{
+    display: flex;
+    object-fit: contain;
+    overflow: hidden;
+    max-width: 360px !important;
+    background-color: transparent !important;
+}
+
+.card__header img{
+    min-width: 40px;
+}
+.card__header img+div{
+    padding-right: 21px !important;
+}
+.card__short-content{
+    text-align: left;
+    margin-bottom: 7px;
+}
+.card__short-content span:first-child{
+    font-size: 12px;
+    font-weight: 200;
+    color: rgba(0, 0, 0, 0.54);
+}
+.card__short-title{
+    text-align: left;
+}
