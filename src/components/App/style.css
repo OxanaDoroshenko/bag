@@ -80,10 +80,13 @@ html, body, #root{
 .page__container__navigation{
   display: flex;
   flex-direction: column;
+  margin-left: -300px;
   width: 300px;
   min-width: 300px;
   height: calc(100vh - 56px);
   background: url("./nav.jpg") no-repeat;
   background-size: cover;
   background-position: 30% 100%;
+  transition: all 1s linear;
+  /*transition: background 500ms linear;*/
 }

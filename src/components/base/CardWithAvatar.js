@@ -70,8 +70,12 @@ export default class CardExampleControlled extends React.Component {
                 positionName: company.position,
             }
         });
-        const positionsList = positions.map((position)=>{
-            return <div className="card__short-content"><span>{position.interval}</span><br></br><span>{position.positionName}</span></div>;
+        const positionsList = positions.map((position, index)=>{
+            return <div key={index} className="card__short-content">
+                <span>{position.interval}</span>
+                <br></br>
+                <span>{position.positionName}</span>
+            </div>;
         });
         const logoImg = require(`../../images/companies/${imgName}.png`);
         return (

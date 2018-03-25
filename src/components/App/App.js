@@ -22,6 +22,8 @@ import Menu from '../../components/Menu/Menu';
 import './style.css';
 import './media.css';
 
+import navImg from './nav.jpg';
+
 
 const injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
@@ -72,7 +74,9 @@ class App extends Component {
     render() {
         const {className, ...props} = this.props;
         const navStyle = {
-            display: this.props.app.activeNav ? 'flex' : 'none',
+            marginLeft: this.props.app.activeNav ? '0' : '-300px',
+            background: `url(${navImg}) no-repeat`,
+            backgroundSize: '100px',
         };
         return (
             <Router>
