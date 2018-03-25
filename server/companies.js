@@ -1,6 +1,5 @@
 const db = require('../db') //this is required
 const Company = require('../db/models/company');
-// const Review = require('../db/models/review');
 
 const router = require('express').Router()
 
